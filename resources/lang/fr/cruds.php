@@ -148,5 +148,11 @@ return [
             'deleted_at'        => 'Deleted at',
             'deleted_at_helper' => ' ',
         ],
+        
     ],
+    "verifier_player" => 'Verifier Joueurs',
+    "verifier_club" => 'Verifier clubs',
+    "verifier_staff" => 'Verifier staff',
+    "editionBA" => 'Edition BA',
+    "re-editionBA" => 'ré-Edition BA',
 ];
