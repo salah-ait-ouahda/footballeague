@@ -61,7 +61,7 @@ class TeamController extends Controller
     {
         abort_if(Gate::denies('team_show'), Response::HTTP_FORBIDDEN, '403 Forbidden');
 
-        $team->load('owner', 'teamPlayers', 'teamStaff');
+        $team->load('owner', 'teamPlayers', 'teamStaff', 'teamBordereaus');
 
         return view('admin.teams.show', compact('team'));
     }

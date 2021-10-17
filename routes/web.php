@@ -43,6 +43,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
     Route::post('staff/ckmedia', 'StaffController@storeCKEditorImages')->name('staff.storeCKEditorImages');
     Route::resource('staff', 'StaffController');
 
+    // Bordereau
+    Route::delete('bordereaus/destroy', 'BordereauController@massDestroy')->name('bordereaus.massDestroy');
+    Route::resource('bordereaus', 'BordereauController');
+
     Route::get('system-calendar', 'SystemCalendarController@index')->name('systemCalendar');
     Route::get('team-members', 'TeamMembersController@index')->name('team-members.index');
     Route::post('team-members', 'TeamMembersController@invite')->name('team-members.invite');

@@ -6,15 +6,6 @@
         </a>
     </div>
 
-   @if (auth()->user()->photo != null)
-   <img src="{{ auth()->user()->photo->getUrl()}}" style="border-radius: 50%" />
-   @else
-   <img src="{{ ""}}" style="border-radius: 50%" />
-   @endif
-   
-<p class="h5 mx-auto">{{auth()->user()->name}}</p>
-
-
     <ul class="c-sidebar-nav">
         <li class="c-sidebar-nav-item">
             <a href="{{ route("admin.home") }}" class="c-sidebar-nav-link">
@@ -76,55 +67,6 @@
                 </a>
             </li>
         @endcan
-        @can('verifier_player')
-            <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.teams.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/teams") || request()->is("admin/teams/*") ? "c-active" : "" }}">
-                    <i class="fa-fw fas fa-users c-sidebar-nav-icon">
-
-                    </i>
-                    {{ trans('cruds.verifier_player') }}
-                </a>
-            </li>
-        @endcan
-        @can('verifier_club')
-            <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.teams.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/teams") || request()->is("admin/teams/*") ? "c-active" : "" }}">
-                    <i class="fa-fw fas fa-users c-sidebar-nav-icon">
-
-                    </i>
-                    {{ trans('cruds.verifier_club') }}
-                </a>
-            </li>
-        @endcan
-        @can('verifier_staff')
-            <li class="c-sidebar-nav-item">
-                <a href="{{ route("admin.teams.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/teams") || request()->is("admin/teams/*") ? "c-active" : "" }}">
-                    <i class="fa-fw fas fa-users c-sidebar-nav-icon">
-
-                    </i>
-                    {{ trans('cruds.verifier_staff') }}
-                </a>
-            </li>
-        @endcan
-        @can('edition_BA')
-        <li class="c-sidebar-nav-item">
-            <a href="{{ route("admin.teams.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/teams") || request()->is("admin/teams/*") ? "c-active" : "" }}">
-                <i class="fa-fw fas fa-users c-sidebar-nav-icon">
-
-                </i>
-                {{ trans('cruds.editionBA') }}
-            </a>
-        </li>
-        <li class="c-sidebar-nav-item">
-            <a href="{{ route("admin.teams.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/teams") || request()->is("admin/teams/*") ? "c-active" : "" }}">
-                <i class="fa-fw fas fa-users c-sidebar-nav-icon">
-
-                </i>
-                {{ trans('cruds.re-editionBA') }}
-            </a>
-        </li>
-    @endcan
-
         @can('player_access')
             <li class="c-sidebar-nav-item">
                 <a href="{{ route("admin.players.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/players") || request()->is("admin/players/*") ? "c-active" : "" }}">
@@ -142,6 +84,16 @@
 
                     </i>
                     {{ trans('cruds.staff.title') }}
+                </a>
+            </li>
+        @endcan
+        @can('bordereau_access')
+            <li class="c-sidebar-nav-item">
+                <a href="{{ route("admin.bordereaus.index") }}" class="c-sidebar-nav-link {{ request()->is("admin/bordereaus") || request()->is("admin/bordereaus/*") ? "c-active" : "" }}">
+                    <i class="fa-fw fas fa-cogs c-sidebar-nav-icon">
+
+                    </i>
+                    {{ trans('cruds.bordereau.title') }}
                 </a>
             </li>
         @endcan

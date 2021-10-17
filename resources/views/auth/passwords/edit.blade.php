@@ -2,7 +2,6 @@
 @section('content')
 
 <div class="row">
-    @can('account_name')
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
@@ -39,10 +38,6 @@
             </div>
         </div>
     </div>
-    @endcan
-    
-
-
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
@@ -75,7 +70,6 @@
         </div>
     </div>
 </div>
-@can('account_delete')
 <div class="row">
     <div class="col-md-6">
         <div class="card">
@@ -97,6 +91,4 @@
     </div>
 
 </div>
-@endcan
-
 @endsection
