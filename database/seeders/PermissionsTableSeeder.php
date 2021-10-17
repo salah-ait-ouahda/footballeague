@@ -136,6 +136,26 @@ class PermissionsTableSeeder extends Seeder
             ],
             [
                 'id'    => 32,
+                'title' => 'bordereau_create',
+            ],
+            [
+                'id'    => 33,
+                'title' => 'bordereau_edit',
+            ],
+            [
+                'id'    => 34,
+                'title' => 'bordereau_show',
+            ],
+            [
+                'id'    => 35,
+                'title' => 'bordereau_delete',
+            ],
+            [
+                'id'    => 36,
+                'title' => 'bordereau_access',
+            ],
+            [
+                'id'    => 37,
                 'title' => 'profile_password_edit',
             ],
         ];
