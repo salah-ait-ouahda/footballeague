@@ -9,18 +9,13 @@
     <div class="card-body">
         <form method="POST" action="{{ route("admin.players.store") }}" enctype="multipart/form-data">
             @csrf
-
-           
-
-              @if(auth()->user()->roles->contains(1))
-              <div class="form-group">
+            <div class="form-group">
                 <label class="required" for="team_id">{{ trans('cruds.player.fields.team') }}</label>
                 <select class="form-control select2 {{ $errors->has('team') ? 'is-invalid' : '' }}" name="team_id" id="team_id" required>
                     @foreach($teams as $id => $entry)
                         <option value="{{ $id }}" {{ old('team_id') == $id ? 'selected' : '' }}>{{ $entry }}</option>
                     @endforeach
                 </select>
-
                 @if($errors->has('team'))
                     <div class="invalid-feedback">
                         {{ $errors->first('team') }}
@@ -28,12 +23,6 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.player.fields.team_helper') }}</span>
             </div>
-                  
-              @else
-                  <input type="hidden" name="team_id" value="{{auth()->user()->team_id}}">
-              @endif
-              
-
             <div class="form-group">
                 <label class="required" for="picture">{{ trans('cruds.player.fields.picture') }}</label>
                 <div class="needsclick dropzone {{ $errors->has('picture') ? 'is-invalid' : '' }}" id="picture-dropzone">
@@ -105,7 +94,6 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.player.fields.sexe_helper') }}</span>
             </div>
-            <input type="hidden" name="status" value="soumit au centre de traitement pour la validation">
             <div class="form-group">
                 <label class="required" for="birthday_date">{{ trans('cruds.player.fields.birthday_date') }}</label>
                 <input class="form-control date {{ $errors->has('birthday_date') ? 'is-invalid' : '' }}" type="text" name="birthday_date" id="birthday_date" value="{{ old('birthday_date') }}" required>

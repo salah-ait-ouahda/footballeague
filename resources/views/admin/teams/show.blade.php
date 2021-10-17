@@ -65,6 +65,11 @@
                 {{ trans('cruds.staff.title') }}
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#team_bordereaus" role="tab" data-toggle="tab">
+                {{ trans('cruds.bordereau.title') }}
+            </a>
+        </li>
     </ul>
     <div class="tab-content">
         <div class="tab-pane" role="tabpanel" id="team_players">
@@ -72,6 +77,9 @@
         </div>
         <div class="tab-pane" role="tabpanel" id="team_staff">
             @includeIf('admin.teams.relationships.teamStaff', ['staff' => $team->teamStaff])
+        </div>
+        <div class="tab-pane" role="tabpanel" id="team_bordereaus">
+            @includeIf('admin.teams.relationships.teamBordereaus', ['bordereaus' => $team->teamBordereaus])
         </div>
     </div>
 </div>
