@@ -38,6 +38,11 @@ class Team extends Model
         return $this->hasMany(Staff::class, 'team_id', 'id');
     }
 
+    public function teamBordereaus()
+    {
+        return $this->hasMany(Bordereau::class, 'team_id', 'id');
+    }
+
     public function owner()
     {
         return $this->belongsTo(User::class, 'owner_id');

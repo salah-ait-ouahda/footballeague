@@ -21,4 +21,7 @@ Route::group(['prefix' => 'v1', 'as' => 'api.', 'namespace' => 'Api\V1\Admin', '
     // Staff
     Route::post('staff/media', 'StaffApiController@storeMedia')->name('staff.storeMedia');
     Route::apiResource('staff', 'StaffApiController');
+
+    // Bordereau
+    Route::apiResource('bordereaus', 'BordereauApiController');
 });

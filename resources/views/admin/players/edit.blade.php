@@ -105,7 +105,6 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.player.fields.birthday_date_helper') }}</span>
             </div>
-            
             <div class="form-group">
                 <label>{{ trans('cruds.player.fields.status') }}</label>
                 <select class="form-control {{ $errors->has('status') ? 'is-invalid' : '' }}" name="status" id="status">
@@ -121,7 +120,6 @@
                 @endif
                 <span class="help-block">{{ trans('cruds.player.fields.status_helper') }}</span>
             </div>
-
             <div class="form-group">
                 <label class="required">{{ trans('cruds.player.fields.category') }}</label>
                 <select class="form-control {{ $errors->has('category') ? 'is-invalid' : '' }}" name="category" id="category" required>
